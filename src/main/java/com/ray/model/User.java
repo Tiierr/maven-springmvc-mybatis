@@ -6,6 +6,7 @@ import java.util.Date;
  * Created by RayYu on 2016/11/16.
  */
 public class User {
+
     private  int user_id;
     private String name;
     private int age;

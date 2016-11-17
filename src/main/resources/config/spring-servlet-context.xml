@@ -48,10 +48,15 @@
                         value="#{dbConfig['read.removeAbandonedTimeout']}"/>
     </beans:bean>
 
+    <!-- -->
+    <!-- 获取数据库连接实例的数据源 -->
+
     <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <beans:property name="configLocation" value="classpath:/config/spring-mybatis-config.xml" />
         <beans:property name="dataSource" ref="mysqlTestSource" />
     </beans:bean>
+
+
     <beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <beans:property name="basePackage" value="com.ray.mapper"/>
     </beans:bean>
@@ -72,6 +77,8 @@
             </beans:props>
         </beans:property>
     </beans:bean>
+
+
     <!-- FreeMarker视图解析   如返回student。。在这里配置后缀名ftl和视图解析器。。-->
     <beans:bean id="viewResolver"
                 class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">

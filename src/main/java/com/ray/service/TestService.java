@@ -9,4 +9,9 @@ import java.util.ArrayList;
  */
 public interface TestService {
     ArrayList<User> getAllUsers ();
+    User getUser(Integer id);
+    void addUser(User user);
+    void updateUser(User user);
+    void deleteUser(Integer id);
+
 }

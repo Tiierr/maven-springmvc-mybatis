@@ -6,4 +6,23 @@
         select  * from user ;
     </select>
 
+    <select id="getUser" resultType="User" parameterType="Integer">
+        select * from user WHERE user_id = #{id}
+    </select>
+
+    <insert id="addUser" parameterType="User"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into user(name,age,sex)
+        values(#{name},#{age},#{sex})
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+          UPDATE user set name = #{name},age = #{age},sex = #{sex}
+          WHERE user_id = #{user_id}
+    </update>
+
+    <delete id="deleteUser" parameterType="Integer">
+        delete FROM user WHERE user_id = #{id}
+    </delete>
+
 </mapper>

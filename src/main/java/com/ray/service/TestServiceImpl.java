@@ -15,8 +15,25 @@ public class TestServiceImpl implements TestService{
     @Autowired
     private TestMapper testMapper;
 
-    // 不应该继承
+    // 不应重载
     public ArrayList<User> getAllUsers(){
+
         return testMapper.getAllUsers();
+    }
+
+    public User getUser(Integer id){
+        return testMapper.getUser(id);
+    }
+
+    public void addUser(User user){
+        testMapper.addUser(user);
+    }
+
+    public void updateUser(User user){
+        testMapper.updateUser(user);
+    }
+
+    public void deleteUser(Integer id){
+        testMapper.deleteUser(id);
     }
 }
